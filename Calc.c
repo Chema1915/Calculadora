@@ -3,7 +3,10 @@
 void mostrarMenu() {
     printf("Seleccione una operación:\n");
     printf("1. Suma (+)\n");
-    printf("2. Salir\n");
+    printf("2. Resta (-)\n");
+    printf("3. Multiplicación (*)\n");
+    printf("4. División (/)\n");
+    printf("5. Salir\n");
 }
 
 int main() {
@@ -15,24 +18,34 @@ int main() {
         printf("Ingrese su opción: ");
         scanf("%d", &opcion);
 
-        if (opcion == 2) {
+        if (opcion == 5) {
             printf("Saliendo...\n");
             break;
-        } else if (opcion == 1) {
-            printf("Ingrese el primer número: ");
-            scanf("%f", &num1);
-            printf("Ingrese el segundo número: ");
-            scanf("%f", &num2);
-
-            // Realizar la suma
-            resultado = num1 + num2;
-            printf("Resultado de la suma: %.2f\n", resultado);
-        } else {
-            printf("Opción no válida. Por favor, seleccione la opción 1 para suma o 2 para salir.\n");
         }
 
-    } while (1); // El bucle continuará hasta que se elija la opción de salida
+        printf("Ingrese el primer número: ");
+        scanf("%f", &num1);
+        printf("Ingrese el segundo número: ");
+        scanf("%f", &num2);
+
+        switch(opcion) {
+            case 1: // Opción de suma
+                resultado = num1 + num2;
+                printf("El resultado de %.2f + %.2f = %.2f\n", num1, num2, resultado);
+                break;
+            case 4: // Opción de división
+                if (num2 != 0) {
+                    resultado = num1 / num2;
+                    printf("El resultado de %.2f / %.2f = %.2f\n", num1, num2, resultado);
+                } else {
+                    printf("Error, no se puede dividir entre 0\n");
+                }
+                break;
+            default:
+                printf("Opción no válida\n");
+                break;
+        }
+    } while (opcion != 5);
 
     return 0;
 }
-
