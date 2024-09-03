@@ -30,10 +30,21 @@ do {
     scanf("%f", &num2);
 
 switch(opcion){
+
 case 2:
         resultado = num1-num2;
         printf("El resultado de %.2f - %.2f = %.2f/n", num1, num2, resultado);}
+        break;
+
+case 4:
+    if (num2 !=0){
+        resultado = num1/num2;
+        printf("El resultado de %.2f / %.2f = %.2f/n", num1, num2, resultado);}
+    else{
+        printf("Error, no se puede dividir entre 0/n");
+    }
     break;
+  
 default:
     printf("Opcion no valida");
     break;
