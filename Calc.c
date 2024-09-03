@@ -14,6 +14,7 @@ printf("4. División (/)\n");
 printf("5. Salir\n");
 }
 
+
 int main() {
 int opcion;
 float num1, num2, resultado;
@@ -35,6 +36,10 @@ do {
 
 switch(opcion)
 {
+    case 2:
+        resultado = num1-num2;
+        printf("El resultado de %.2f - %.2f = %.2f/n", num1, num2, resultado);}
+        break;
     case 3: multi(num1,num2);
         break;
 
