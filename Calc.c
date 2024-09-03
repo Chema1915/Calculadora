@@ -9,9 +9,6 @@ printf("4. División (/)\n");
 printf("5. Salir\n");
 }
 
-float resta(float num1, float num2){
-printf("\El resultado de la resta es: %f",num1-num2);
-}
 
 int main() {
 int opcion;
@@ -32,9 +29,16 @@ do {
     printf("Ingrese el segundo número: ");
     scanf("%f", &num2);
 
-switch (opcion){
-    case 2: 
-        resta(num1,num2);
-        break;
+switch(opcion){
+case 2:
+        resultado = num1-num2;
+        printf("El resultado de %.2f - %.2f = %.2f/n", num1, num2, resultado);}
+    break;
+default:
+    printf("Opcion no valida");
+    break;
 }
-
+}while (opcion !=5){
+return 0;
+}
+}
