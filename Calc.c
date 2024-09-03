@@ -1,5 +1,10 @@
 #include <stdio.h>
 
+void multi (int a,int b);
+void multi (int a,int b)
+{
+    printf("El resultado de (%d)(%d) es: %d",a,b,a*b);
+}
 void mostrarMenu() {
 printf("Seleccione una operación:\n");
 printf("1. Suma (+)\n");
@@ -28,20 +33,24 @@ do {
     printf("Ingrese el segundo número: ");
     scanf("%f", &num2);
 
-switch(opcion){
-case 4:
-    if (num2 !=0){
-        resultado = num1/num2;
-        printf("El resultado de %.2f / %.2f = %.2f/n", num1, num2, resultado);}
-    else{
-        printf("Error, no se puede dividir entre 0/n");
+switch(opcion)
+{
+    case 3: multi(num1,num2);
+        break;
+
+    case 4:
+        if (num2 !=0){
+            resultado = num1/num2;
+            printf("El resultado de %.2f / %.2f = %.2f/n", num1, num2, resultado);}
+        else{
+            printf("Error, no se puede dividir entre 0/n");
+        }
+        break;
+    default:
+        printf("Opcion no valida");
+        break;
     }
-    break;
-default:
-    printf("Opcion no valida");
-    break;
-}
-}while (opcion !=5){
-return 0;
-}
+    }while (opcion !=5){
+    return 0;
+    }
 }
