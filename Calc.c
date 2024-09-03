@@ -36,6 +36,10 @@ do {
 
 switch(opcion)
 {
+    case 1: // Opción de suma
+            resultado = num1 + num2;
+            printf("El resultado de %.2f + %.2f = %.2f\n", num1, num2, resultado);
+            break;
     case 2:
         resultado = num1-num2;
         printf("El resultado de %.2f - %.2f = %.2f/n", num1, num2, resultado);
