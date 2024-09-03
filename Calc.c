@@ -1,5 +1,10 @@
 #include <stdio.h>
 
+void multi (int a,int b);
+void multi (int a,int b)
+{
+    printf("El resultado de (%d)(%d) es: %d",a,b,a*b);
+}
 void mostrarMenu() {
     printf("Seleccione una operación:\n");
     printf("1. Suma (+)\n");
@@ -8,6 +13,7 @@ void mostrarMenu() {
     printf("4. División (/)\n");
     printf("5. Salir\n");
 }
+
 
 int main() {
     int opcion;
@@ -23,29 +29,37 @@ int main() {
             break;
         }
 
-        printf("Ingrese el primer número: ");
-        scanf("%f", &num1);
-        printf("Ingrese el segundo número: ");
-        scanf("%f", &num2);
+    printf("Ingrese el primer número: ");
+    scanf("%f", &num1);
+    printf("Ingrese el segundo número: ");
+    scanf("%f", &num2);
 
-        switch(opcion) {
-            case 1: // Opción de suma
-                resultado = num1 + num2;
-                printf("El resultado de %.2f + %.2f = %.2f\n", num1, num2, resultado);
-                break;
-            case 4: // Opción de división
-                if (num2 != 0) {
-                    resultado = num1 / num2;
-                    printf("El resultado de %.2f / %.2f = %.2f\n", num1, num2, resultado);
-                } else {
-                    printf("Error, no se puede dividir entre 0\n");
-                }
-                break;
-            default:
-                printf("Opción no válida\n");
-                break;
+switch(opcion)
+{
+    case 1: // Opción de suma
+            resultado = num1 + num2;
+            printf("El resultado de %.2f + %.2f = %.2f\n", num1, num2, resultado);
+            break;
+    case 2:
+        resultado = num1-num2;
+        printf("El resultado de %.2f - %.2f = %.2f/n", num1, num2, resultado);}
+        break;
+    case 3: multi(num1,num2);
+        break;
+
+    case 4:
+        if (num2 !=0){
+            resultado = num1/num2;
+            printf("El resultado de %.2f / %.2f = %.2f/n", num1, num2, resultado);}
+        else{
+            printf("Error, no se puede dividir entre 0/n");
         }
-    } while (opcion != 5);
-
+        break;
+    default:
+        printf("Opcion no valida");
+        break;
+    }
+    }while (opcion !=5){
     return 0;
+    }
 }
